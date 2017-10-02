@@ -1,0 +1,64 @@
+program server;
+
+uses
+  Classes,
+  SfmlNetwork in '.\SfmlNetwork.pas';
+
+const
+  PORT = 1717;
+var
+  pSocket: PsfmlTcpSocket;
+  Listener: TsfmlTcpListener;
+  AddressRecord: TSfmlIpAddress;
+  MsgFromClient: array[0..99] of char;
+  MsgSize: longword;
+  PMsg: pointer;
+
+  procedure RunTcpServer(MyPort: integer);
+  const
+    Msg: PChar = 'Hi, I''m the server';
+
+  begin
+    Listener := TsfmlTcpListener.Create;
+    // Listen to the given port for incoming connections
+    if Listener.listen(MyPort, AddressRecord) <> sfSocketDone then
+      exit;
+    writeln('Server is listening to port ', MyPort, ' waiting for connections... ');
+    // Wait for a connection
+    if Listener.accept(pSocket) <> sfSocketDone then
+      exit;
+    AddressRecord := SfmlTcpSocketGetRemoteAddress(psocket);
+    writeln('Client connected: ', AddressRecord.Address);
+    // Send a message to the connected client
+    if SfmlTcpSocketSend(psocket, msg, 18) <> sfSocketDone then
+      exit;
+    writeln('Message sent to the client: ', msg);
+    // Receive a message back from the client
+    PMsg := @MsgFromClient;
+    if SfmlTcpSocketReceive(pSocket, PMsg, 100, MsgSize) <> sfSocketDone then
+      exit;
+    writeln('Answer received from the client: ', MsgFromClient);
+
+    while True do
+    begin
+      Sleep(2000);
+
+      msg := 'blablablablablabla';
+
+      if SfmlTcpSocketSend(psocket, msg, 18) <> sfSocketDone then
+        exit;
+      writeln('Message sent to the client: ', msg);
+
+      // Receive a message back from the client
+      PMsg := @MsgFromClient;
+
+      if SfmlTcpSocketReceive(pSocket, PMsg, 100, MsgSize) <> sfSocketDone then
+        exit;
+      writeln('Answer received from the client: ', MsgFromClient);
+    end;
+  end;
+
+begin
+  RunTcpServer(port);
+  readln;
+end.

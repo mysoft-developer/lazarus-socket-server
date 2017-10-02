@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <ProjectSession>
+    <PathDelim Value="\"/>
+    <Version Value="9"/>
+    <BuildModes Active="Default"/>
+    <Units Count="2">
+      <Unit0>
+        <Filename Value="server.lpr"/>
+        <IsPartOfProject Value="True"/>
+        <IsVisibleTab Value="True"/>
+        <CursorPos X="11" Y="4"/>
+        <UsageCount Value="20"/>
+        <Loaded Value="True"/>
+      </Unit0>
+      <Unit1>
+        <Filename Value="SfmlNetwork.pas"/>
+        <IsPartOfProject Value="True"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="20"/>
+        <CursorPos X="17" Y="27"/>
+        <UsageCount Value="20"/>
+      </Unit1>
+    </Units>
+    <JumpHistory Count="7" HistoryIndex="6">
+      <Position1>
+        <Filename Value="server.lpr"/>
+        <Caret Line="16"/>
+      </Position1>
+      <Position2>
+        <Filename Value="server.lpr"/>
+        <Caret Line="22" Column="30" TopLine="8"/>
+      </Position2>
+      <Position3>
+        <Filename Value="server.lpr"/>
+        <Caret Line="22" Column="15" TopLine="7"/>
+      </Position3>
+      <Position4>
+        <Filename Value="server.lpr"/>
+        <Caret Line="21" Column="40" TopLine="18"/>
+      </Position4>
+      <Position5>
+        <Filename Value="server.lpr"/>
+        <Caret Line="22" Column="45" TopLine="8"/>
+      </Position5>
+      <Position6>
+        <Filename Value="server.lpr"/>
+        <Caret Line="29" Column="15" TopLine="18"/>
+      </Position6>
+      <Position7>
+        <Filename Value="server.lpr"/>
+        <Caret Line="56" Column="67" TopLine="32"/>
+      </Position7>
+    </JumpHistory>
+  </ProjectSession>
+</CONFIG>
